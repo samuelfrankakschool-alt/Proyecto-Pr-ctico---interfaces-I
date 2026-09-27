@@ -1,0 +1,7 @@
+# Configuración del editor de código
+.vscode/
+
+# Archivos de registro y temporales
+*.log
+*.tmp
+temp/

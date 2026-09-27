@@ -1,0 +1,372 @@
+/* 1. ESTILOS GENERALES Y FUENTES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #0b1320;
+  background-image:
+    linear-gradient(rgba(10, 17, 30, 0.90), rgba(10, 17, 30, 0.90)),
+    url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=1500&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 2. CONTROL DE PANTALLAS / VISTAS */
+.contenedor-vista {
+  display: none;
+  width: 100%;
+  max-width: 420px;
+}
+
+.contenedor-vista.activa {
+  display: block;
+}
+
+#vista-dashboard.activa {
+  max-width: 750px;
+}
+
+/* 3. ESTILOS DE TARJETAS DORADAS */
+.tarjeta-dorada {
+  background-color: rgba(10, 18, 32, 0.95);
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.contenedor-panel {
+  width: 100%;
+}
+
+.icono-logo {
+  width: 36px;
+  height: 36px;
+  background-color: #f59e0b;
+  color: #0b1320;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+  font-weight: bold;
+}
+
+.texto-pequeno {
+  font-size: 10px;
+  color: #94a3b8;
+  letter-spacing: 2px;
+}
+
+.titulo-principal {
+  color: #fef08a;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.subtitulo-principal {
+  color: #eab308;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.linea-decorativa {
+  height: 1px;
+  background-color: #b45309;
+  margin: 15px auto;
+  width: 70%;
+}
+
+.subtitulo-seccion {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+.texto-azul {
+  color: #38bdf8;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.titulo-academico {
+  color: #fef08a;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.subtitulo-academico {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* 4. FORMULARIOS Y BOTONES */
+.campo-formulario {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.campo-formulario label {
+  display: block;
+  font-size: 10px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.campo-formulario input,
+.campo-formulario select {
+  width: 100%;
+  padding: 10px;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+  border-color: #eab308;
+}
+
+.boton-dorado {
+  width: 100%;
+  padding: 12px;
+  background-color: #eab308;
+  border: none;
+  border-radius: 5px;
+  color: #0b1320;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.boton-dorado:hover {
+  background-color: #fde047;
+}
+
+.texto-pie {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 15px;
+}
+
+.texto-pie a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.texto-pie a:hover {
+  text-decoration: underline;
+}
+
+/* 5. BARRA SUPERIOR DE PERFIL */
+.barra-superior {
+  background-color: rgba(10, 18, 32, 0.9);
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.usuario-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-circulo {
+  width: 32px;
+  height: 32px;
+  background-color: #f59e0b;
+  color: #0b1320;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.nombre-usuario {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.rol-usuario {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.boton-salir {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #f59e0b;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.boton-salir:hover {
+  background-color: rgba(245, 158, 11, 0.1);
+}
+
+/* 6. MENÚ BLANCO DE OPCIONES */
+.caja-blanca-calculadoras {
+  background-color: #ffffff;
+  color: #0b1320;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.encabezado-calculadoras {
+  background-color: #091322;
+  color: #ffffff;
+  padding: 12px 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #eab308;
+}
+
+.lista-opciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 15px;
+}
+
+.item-opcion {
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+.item-opcion:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.numero-badge {
+  width: 22px;
+  height: 22px;
+  background-color: #0b1320;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.numero-badge.amarillo {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.opcion-salir {
+  background-color: #fffbeb;
+}
+
+.texto-salir {
+  color: #d97706;
+  font-weight: bold;
+}
+
+/* 7. VENTANA MODAL */
+.fondo-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.fondo-modal.activo {
+  display: flex;
+}
+
+.caja-modal {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+.boton-cerrar-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.titulo-modal {
+  color: #fef08a;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.cuadro-resultados {
+  background-color: #0f172a;
+  border: 1px dashed #eab308;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.texto-vacio {
+  color: #64748b;
+  font-size: 12px;
+  text-align: center;
+}
+
+.resultado-linea {
+  font-size: 13px;
+  color: #e2e8f0;
+  margin-bottom: 6px;
+}
+
+.resultado-linea strong {
+  color: #fef08a;
+}

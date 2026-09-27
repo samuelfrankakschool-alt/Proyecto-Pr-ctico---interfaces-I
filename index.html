@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scalable=1.0, minimun-scalable=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Aurum Constructores - Sistema de Acceso y Calculadora</title>
+  <meta name="author" content="Joan Clavijo Pulido, Brayan Stiven Castro, Johan Sebastian">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Esta es la vista de inicio de sesión -->
+
+  <div id="vista-login" class="contenedor-vista activa">
+    <div class="tarjeta-dorada">
+      <div class="icono-logo">▲</div>
+      <p class="texto-pequeno">GRUPO EMPRESARIAL</p>
+      <h1 class="titulo-principal">AURUM</h1>
+      <h2 class="subtitulo-principal">CONSTRUCTORES</h2>
+      <p class="texto-pequeno">S . A .</p>
+
+      <div class="linea-decorativa"></div>
+
+      <p class="subtitulo-seccion">SISTEMA DE ACCESO</p>
+
+      <!-- Formulario de Login -->
+      <form id="formulario-login">
+        <div class="campo-formulario">
+          <label for="login-correo">CORREO ELECTRÓNICO</label>
+          <input type="email" id="login-correo" value="usuario@aurum.com" required>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="login-clave">CONTRASEÑA</label>
+          <input type="password" id="login-clave" value="123456" required>
+        </div>
+
+        <button type="submit" class="boton-dorado">INICIAR SESIÓN</button>
+      </form>
+
+      <p class="texto-pie">
+        ¿No tienes cuenta? <a href="#" id="ir-a-registro">Regístrate aquí</a>
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Esta es la vista de registro de usuario -->
+
+  <div id="vista-registro" class="contenedor-vista">
+    <div class="tarjeta-dorada">
+      <div class="icono-logo">▲</div>
+      <p class="texto-pequeno">GRUPO EMPRESARIAL</p>
+      <h1 class="titulo-principal">AURUM</h1>
+      <h2 class="subtitulo-principal">CONSTRUCTORES</h2>
+      <p class="texto-pequeno">S . A .</p>
+
+      <div class="linea-decorativa"></div>
+
+      <p class="subtitulo-seccion">CREAR NUEVA CUENTA</p>
+
+      <!-- Formulario de Registro -->
+      <form id="formulario-registro">
+        <div class="campo-formulario">
+          <label for="registro-nombre">NOMBRE COMPLETO</label>
+          <input type="text" id="registro-nombre" placeholder="Ej. Carlos Rodríguez" required>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="registro-correo">CORREO ELECTRÓNICO</label>
+          <input type="email" id="registro-correo" placeholder="usuario@aurum.com" required>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="registro-rol">PERFIL / ROL</label>
+          <select id="registro-rol">
+            <option value="Estudiante">Estudiante</option>
+            <option value="Ingeniero">Ingeniero</option>
+            <option value="Arquitecto">Arquitecto</option>
+            <option value="Maestro de Obra">Maestro de Obra</option>
+          </select>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="registro-clave">CONTRASEÑA</label>
+          <input type="password" id="registro-clave" placeholder="Mínimo 6 caracteres" required minlength="6">
+        </div>
+
+        <button type="submit" class="boton-dorado">CREAR CUENTA</button>
+      </form>
+
+      <p class="texto-pie">
+        ¿Ya tienes cuenta? <a href="#" id="ir-a-login">Inicia sesión</a>
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Esta es el panel principal -->
+
+  <div id="vista-dashboard" class="contenedor-vista">
+    <div class="contenedor-panel">
+
+      <!-- Barra Superior con Datos del Perfil -->
+      <div class="barra-superior">
+        <div class="usuario-info">
+          <div class="avatar-circulo" id="usuario-inicial">U</div>
+          <div>
+            <div class="nombre-usuario" id="usuario-nombre">Usuario</div>
+            <div class="rol-usuario" id="usuario-rol">Estudiante</div>
+          </div>
+        </div>
+        <button class="boton-salir" id="btn-cerrar-sesion">CERRAR SESIÓN</button>
+      </div>
+
+      <!-- Tarjeta 1: Aurum Constructores -->
+      <div class="tarjeta-dorada">
+        <div class="icono-logo">▲</div>
+        <p class="texto-pequeno">GRUPO EMPRESARIAL</p>
+        <h1 class="titulo-principal">AURUM CONSTRUCTORES</h1>
+        <p class="texto-pequeno">S . A .</p>
+
+        <div class="linea-decorativa"></div>
+
+        <p class="texto-azul">INGENIERÍA • CONSTRUCCIÓN • EXCELENCIA</p>
+      </div>
+
+      <!-- Tarjeta 2: Documento Académico -->
+      <div class="tarjeta-dorada">
+        <p class="texto-pequeno">DOCUMENTO ACADÉMICO OFICIAL</p>
+        <h2 class="titulo-academico">FUNDACIÓN ESCUELA TECNOLÓGICA<br>JESÚS OVIEDO PÉREZ</h2>
+
+        <div class="linea-decorativa"></div>
+
+        <p class="subtitulo-academico">INGENIERÍA DE SOFTWARE</p>
+        <p class="texto-pequeno">INTERFACES I • PROYECTO PRÁCTICO</p>
+      </div>
+
+      <!-- Menú Blanco de Calculadoras -->
+      <div class="caja-blanca-calculadoras">
+        <div class="encabezado-calculadoras">HAZ CLIC EN UNA OPCIÓN PARA CÁLCULOS</div>
+
+        <div class="lista-opciones">
+          <div class="item-opcion" onclick="abrirCalculadora('muro')">
+            <span class="numero-badge">1</span>
+            <span>Calcular muro de ladrillo</span>
+          </div>
+
+          <div class="item-opcion" onclick="abrirCalculadora('viga')">
+            <span class="numero-badge">2</span>
+            <span>Calcular viga de hormigón</span>
+          </div>
+
+          <div class="item-opcion" onclick="abrirCalculadora('columna')">
+            <span class="numero-badge">3</span>
+            <span>Calcular columnas de hormigón</span>
+          </div>
+
+          <div class="item-opcion" onclick="abrirCalculadora('contrapiso')">
+            <span class="numero-badge">4</span>
+            <span>Calcular contrapisos</span>
+          </div>
+
+          <div class="item-opcion" onclick="abrirCalculadora('techo')">
+            <span class="numero-badge">5</span>
+            <span>Calcular techo</span>
+          </div>
+
+          <div class="item-opcion" onclick="abrirCalculadora('pisos')">
+            <span class="numero-badge">6</span>
+            <span>Calcular pisos</span>
+          </div>
+
+          <div class="item-opcion" onclick="abrirCalculadora('pintura')">
+            <span class="numero-badge">7</span>
+            <span>Calcular pintura</span>
+          </div>
+
+          <div class="item-opcion opcion-salir" id="btn-opcion-salir">
+            <span class="numero-badge amarillo">8</span>
+            <span class="texto-salir">Salir (Cerrar sesión)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Esta es la ventana de calculo -->
+
+  <div id="modal-calculadora" class="fondo-modal">
+    <div class="tarjeta-dorada caja-modal">
+      <button class="boton-cerrar-modal" onclick="cerrarCalculadora()">✕</button>
+
+      <h3 id="modal-titulo" class="titulo-modal">Calcular Muro de Ladrillo</h3>
+
+      <!-- Los campos de entrada se generan dinámicamente según la calculadora elegida -->
+      <div id="modal-campos-formulario"></div>
+
+      <!-- Cuadro de Resultados -->
+      <div id="cuadro-resultados" class="cuadro-resultados">
+        <p class="texto-vacio">📐 Ingresa las dimensiones para calcular</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
