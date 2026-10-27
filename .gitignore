@@ -5,3 +5,8 @@
 *.log
 *.tmp
 temp/
+node_modules/
+
+# Archivos sensibles
+package-lock.json
+usuarios.json

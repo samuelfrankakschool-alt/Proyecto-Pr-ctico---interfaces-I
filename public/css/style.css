@@ -370,3 +370,19 @@ body {
 .resultado-linea strong {
   color: #fef08a;
 }
+
+/* Estilos para la sección del Historial */
+.lista-historial {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.lista-historial::-webkit-scrollbar {
+  width: 5px;
+}
+
+.lista-historial::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 4px;
+}

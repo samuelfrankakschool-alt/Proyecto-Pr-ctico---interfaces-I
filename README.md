@@ -1,70 +1,56 @@
-# Calculadora de Materiales de Construcción 🏗️
+# Calculadora de Materiales de Construccion 🏗️
 
-Hola, este es nuestro proyecto para la materia de **Interfaces I** de la carrera de Ingeniería de Software en la **Fundación Escuela Tecnológica Jesús Oviedo Pérez (FET)**.
+Proyecto desarrollado para la materia de Interfaces I de la carrera de Ingenieria de Software en la Fundacion Escuela Tecnologica Jesus Oviedo Perez (FET).
 
-Es una aplicación web sencilla pero muy útil que sirve para calcular la cantidad de materiales que se necesitan para distintos tipos de obras de construcción (muros, vigas, columnas, contrapisos, techos, pisos y pintura). 
-
-También incluye un sistema de registro e inicio de sesión por roles (Estudiante, Ingeniero, Arquitecto, Maestro de Obra).
+Consiste en una aplicacion web para calcular la cantidad de materiales necesarios en distintas obras de construccion (muros, vigas, columnas, contrapisos, techos, pisos y pintura). El sistema cuenta con autenticacion real de usuarios, registro por roles (Estudiante, Ingeniero, Arquitecto, Maestro de Obra) y un historial donde cada usuario puede guardar y consultar sus cotizaciones.
 
 ---
 
-## ¿Cómo se ve la aplicación?
+## Estructura y pantallas
 
-El proyecto cuenta con varias pantallas integradas:
-1. **Inicio de sesión:** Para entrar con correo y contraseña.
-2. **Registro de usuarios:** Para crear una cuenta nueva y elegir el rol.
-3. **Panel principal:** Un menú interactivo con las 7 calculadoras de materiales.
-4. **Ventana modal:** Donde metes las medidas y te da el resultado al instante.
-
----
-
-## Tecnologías que utilicé
-
-Para hacer este proyecto utilicé únicamente las tecnologías básicas de desarrollo web (sin frameworks ni librerías raras):
-
-* **HTML5:** Para armar toda la estructura de las pantallas y formularios.
-* **CSS3:** Para los estilos visuales, colores (azul oscuro y dorado), fuentes y hacer que el modal y las tarjetas se vean bien.
-* **JavaScript (Vanilla JS):** Para la lógica del inicio de sesión, el cambio de pantallas y todas las fórmulas matemáticas de los materiales.
+La interfaz esta integrada por las siguientes vistas:
+1. Inicio de sesion: Pantalla de acceso mediante correo electronico y contrasena.
+2. Registro de usuarios: Formulario para dar de alta una nueva cuenta eligiendo el perfil profesional.
+3. Panel principal: Menu interactivo con las 7 calculadoras de materiales y la seccion del historial de cotizaciones personales.
+4. Ventana modal: Interfaz emergente para ingresar medidas, visualizar los resultados y guardarlos directamente en el servidor.
 
 ---
 
-## ¿Qué calcula esta herramienta?
+## Tecnologias utilizadas
 
-El programa realiza los siguientes cálculos de acuerdo a las especificaciones pedidas:
+Para este proyecto utilizamos desarrollo web base combinado con un servidor backend sencillo:
+* HTML5: Estructura de vistas y formularios.
+* CSS3: Diseno visual, paleta de colores oscuro/dorado y adaptabilidad.
+* JavaScript (Vanilla JS): Logica de interaccion en el navegador y llamadas asincronas (fetch) hacia el servidor.
+* Node.js y Express: Servidor backend para gestionar el registro, inicio de sesion y las peticiones del historial.
+* Bcryptjs: Libreria para encriptar las contraseñas de forma segura en el servidor.
 
-* **Muro de Ladrillo (30 cm / m²):** Cemento (15.2 kg), Arena (0.115 m³), Ladrillos (120 unidades).
-* **Muro de Ladrillo (20 cm / m²):** Cemento (10.9 kg), Arena (0.09 m³), Ladrillos (90 unidades).
-* **Viga de Hormigón (por metro lineal):** Cemento (9 kg), Arena (0.02 m³), Piedra (0.02 m²), Hierro Ø8 (4m), Hierro Ø4 (3m).
-* **Columna de Hormigón (por metro lineal):** Cemento (7.5 kg), Arena (0.016 m³), Piedra (0.016 m²), Hierro Ø10 (6m), Hierro Ø4 (3m).
-* **Contrapisos (por m³):** Cemento (105 kg), Arena (0.45 m³), Piedra (0.9 m³).
-* **Techo (por m²):** Cemento (33 kg), Arena (0.072 m³), Piedra (0.072 m³), Hierro Ø8 (7m), Hierro Ø6 (4m).
-* **Pisos (por m²):** Calcula el área total y le suma un **10% extra** para cubrir el desperdicio por recortes.
-* **Pintura (por m²):** Calcula los litros necesarios tomando en cuenta que 1 litro rinde 6 m².
+---
+
+## Calculos implementados
+
+El sistema realiza los calculos segun las especificaciones pedidas:
+* Muro de Ladrillo (30 cm / m²): Cemento (15.2 kg), Arena (0.115 m³), Ladrillos (120 unidades).
+* Muro de Ladrillo (20 cm / m²): Cemento (10.9 kg), Arena (0.09 m³), Ladrillos (90 unidades).
+* Viga de Hormigon (por metro lineal): Cemento (9 kg), Arena (0.02 m³), Piedra (0.02 m²), Hierro Ø8 (4m), Hierro Ø4 (3m).
+* Columna de Hormigon (por metro lineal): Cemento (7.5 kg), Arena (0.016 m³), Piedra (0.016 m²), Hierro Ø10 (6m), Hierro Ø4 (3m).
+* Contrapisos (por m³): Cemento (105 kg), Arena (0.45 m³), Piedra (0.9 m³).
+* Techo (por m²): Cemento (33 kg), Arena (0.072 m³), Piedra (0.072 m³), Hierro Ø8 (7m), Hierro Ø6 (4m).
+* Pisos (por m²): Calcula el area total y anade un 10% extra por recortes.
+* Pintura (por m²): Calcula los litros necesarios tomando un rendimiento de 1 litro por cada 6 m².
 
 ---
 
 ## 📁 Estructura del proyecto
 
-El código está dividido en 3 archivos independientes para mantener todo ordenado:
-/
-├── index.html       # Estructura principal y maquetado de vistas
-├── css
-    └── styles.css       # Estilos, colores dorados y responsive
-├── js
-    └──script.js        # Lógica de login, subprogramas y funciones matemáticas
+El codigo esta organizado de la siguiente manera:
 
----
-
-## ¿Cómo probarlo localmente?
-
-No necesitas instalar nada complicado.
-
-1. Clona o descarga este repositorio en tu computadora.
-2. Abre la carpeta del proyecto.
-3. Haz doble clic en el archivo `index.html` para abrirlo en tu navegador web (Chrome, Edge, Firefox, etc.).
-4. ¡Listo! Puedes probar iniciar sesión con los datos por defecto (`usuario@aurum.com` / `123456`) o registrar un usuario nuevo.
-
-
----
-
- Hecho por **Joan David Clavijo, Brayan Stiven Castro y Johan Sebastian Montenegro** — *Estudiantes de Ingeniería de Software*
+```text
+aurum-backend/
+├── public/
+│   ├── index.html       # Estructura principal y maquetado de vistas
+│   ├── styles.css       # Estilos visuales y diseno
+│   └── script.js        # Logica del navegador y conexion con la API
+├── server.js            # Servidor de Node.js y Express con las rutas del backend
+├── package.json         # Configuracion y dependencias del proyecto
+└── usuarios.json        # Base de datos local en archivo JSON para persistencia
